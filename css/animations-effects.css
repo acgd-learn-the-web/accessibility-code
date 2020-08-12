@@ -1,0 +1,73 @@
+html {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+.banner {
+  position: relative;
+  min-height: 15rem;
+  background-color: yellow;
+  overflow: hidden;
+}
+
+h1 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: orangered;
+  font-size: 4rem;
+  background-color: rgba(255, 69, 0, 0.3);
+  padding: 1rem 0;
+  z-index: 1;
+}
+
+img {
+  position: absolute;
+  width: 25rem;
+  height: 25rem;
+  left: 15%;
+  bottom: -2rem;
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion) {
+  img {
+    animation: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #222;
+  }
+  .banner {
+    opacity: 0.5;
+  }
+}
+
+/* Doesn’t exist in browser at time of video recording */
+@media (prefers-reduced-transparency: reduce) {
+  h1 {
+    background-color: orange;
+  }
+}
